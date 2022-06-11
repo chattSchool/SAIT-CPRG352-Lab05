@@ -4,6 +4,7 @@
     Author     : Dakota Chatt
 --%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE html>
 <html>
@@ -14,15 +15,18 @@
     <body>
         <h1>Login</h1>
         
-        <form method="post" action="">
+        <form method="post" action="login">
             <label><strong>Username: </strong></label>
-            <input type="text" name="username" value="">
+            <input type="text" name="username" value="${username}">
             <br>
             <label><strong>Password: </strong></label>
-            <input type="password" name="password" value="">
+            <input type="password" name="password" value="${password}">
             <br>
             <input type="submit" value="Log in">
         </form>
-        <p><p>
+            
+        <c:if test="${message != null}">
+            <p style="color: red"><i>${message}</i><p>
+        </c:if>
     </body>
 </html>
